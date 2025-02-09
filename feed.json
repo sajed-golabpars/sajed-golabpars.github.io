@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Simple Solutions",
+    "description": "",
+    "home_page_url": "https://sajed-golabpars.github.io",
+    "feed_url": "https://sajed-golabpars.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Sajed Golabpars"
+    },
+    "items": [
+        {
+            "id": "https://sajed-golabpars.github.io/first-post.html",
+            "url": "https://sajed-golabpars.github.io/first-post.html",
+            "title": "Python&#x27;s dependency to packages. A simple solution to an annoying issue!",
+            "summary": "Whenever you are setting up an environment for your python project, specifically when you are working with unstable versions of packages in scientific projects, there is a good chance that slight changes in the new versions of the packages, by their publishers, end you up&hellip;",
+            "content_html": "<p>Whenever you are setting up an environment for your python project, specifically when you are working with unstable versions of packages in scientific projects, there is a good chance that slight changes in the new versions of the packages, by their publishers, end you up with unknown and strange errors which occurs because of incompatibility of the libraries or packages with your current code or other dependencies used that spesific changed package in their base codes. Here I would like to introduce a straightforward solution to this issue. Of course, there is a pre-requisite to this, and it is the fact that you need an already running version of your application.</p>\n<p>The pip package manager has the “freeze” command which is helpful for this case. Use the lines bellow inside the project’s directory after activating the virtual environment:</p>\n<pre><code>pip freeze &gt; requirements.txt            //to be used in the source directory</code><br><code>pip install -r requirements.txt     //to be used in the destination directory</code><br><code>sajed@iniak-linux: cd ~/Desktop/old_project</code><br><code>sajed@iniak-linux: ~/Desktop/ old_project $ source ./.venv/bin/activate</code><br><code>(.venv) sajed@iniak-linux: ~/Desktop/old_project$ pip freeze &gt; requirements.txt</code></pre>\n<p>you can easily use this command to extract all the dependencies/requirements that the existing project is running with. The file “requirements.txt” is stored in the project’s main directory and ready to be copied wherever needed.</p>\n<p>After copying the file into the destination directory (main directory of the project in another computer/environment), you can easily install all the dependencies using the “requirements.txt” file. Here I am creating a new project directory named “new_project” inside the Desktop directory, then copying the “requirement.txt” file in it, then creating a virtual environment, then installing all the dependencies using the “requirements.txt” file.</p>\n<pre><code>sajed@iniak-linux: mkdir -p ~/Desktop/new_project<br>sajed@iniak-linux: cp ~/Desktop/old_project/requirements.txt ~/Desktop/new_project/<br>sajed@iniak-linux: cd ~/Desktop/new_project<br>sajed@iniak-linux: ~/Desktop/ new_project $ python3 -m venv .venv<br>sajed@iniak-linux: ~/Desktop/ new_project $ source ./.venv/bin/activate<br>(.venv ) sajed@iniak-linux: ~/Desktop/new_project$ pip install -r requirements.txt<br></code></pre>\n<p>Right now, you have a clean setup of the exact dependencies that your project is going to work with. Simply, clone your project in the new destination and run it without any problem.</p>\n<p> </p>\n<p>Note: It is really a good practice to use this approach and always put the “requirement.txt” file in the project repository therefore, whoever that clones the repository, can install the dependencies without any problem.</p>",
+            "author": {
+                "name": "Sajed Golabpars"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-02-09T17:09:33+01:00",
+            "date_modified": "2025-02-09T20:13:06+01:00"
+        }
+    ]
+}
